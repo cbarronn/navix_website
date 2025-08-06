@@ -199,15 +199,18 @@ body {
 }
 
 .whatsapp-link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 10px;
     color: #25D366;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
 }
 
 .whatsapp-link:hover {
-    transform: scale(1.1);
     color: #128C7E;
 }
 
