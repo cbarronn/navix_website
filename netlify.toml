@@ -1,0 +1,9 @@
+[build]
+  command = "echo 'No build needed for static site'"
+  publish = "./"
+
+[context.production]
+  command = "echo 'No build needed for static site'"
+
+[context.deploy-preview]
+  command = "echo 'No build needed for static site'"
