@@ -7,8 +7,11 @@
     <meta name="description" content="Navix Consulting - Líder en implementación de ERP Dynamics NAV, transformación digital y servicios tecnológicos avanzados">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="banner-reliable.js" defer></script>
     <script src="scripts.js" defer></script>
+    <script src="simple-form.js" defer></script>
+    <script src="emailjs-form.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -118,22 +121,30 @@
         <h2>Contacto</h2>
         <div class="contact-content">
             <div class="contact-form">
+                <h3>Contáctanos</h3>
                 <form id="contactForm">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="tel" placeholder="Teléfono">
-                    <select required>
-                        <option value="">Seleccione un servicio</option>
-                        <option value="erp">ERP Dynamics NAV</option>
-                        <option value="web">Desarrollo Web</option>
-                        <option value="mobile">Desarrollo Móvil</option>
-                        <option value="automation">Automatización</option>
-                        <option value="infrastructure">Infraestructura</option>
-                        <option value="innovation">Innovación Tecnológica</option>
-                        <option value="digital">Transformación Digital</option>
-                    </select>
-                    <textarea placeholder="Mensaje" required></textarea>
-                    <button type="submit" class="cta-button">Enviar</button>
+                    <div class="form-group">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <div class="form-group">
+                        <select name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="erp">ERP Dynamics NAV</option>
+                            <option value="web">Desarrollo Web</option>
+                            <option value="mobile">Desarrollo Móvil</option>
+                            <option value="automation">Automatización</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Enviar mensaje</button>
                 </form>
             </div>
             <div class="contact-info">
