@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
+    // DISABLED: This handler conflicts with emailjs-form.js causing double submission
+    // The first handler processes and clears form values, then emailjs-form.js runs with empty values
+    /*
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    */
     
     function showMessage(message, type) {
         // Remover mensaje anterior si existe

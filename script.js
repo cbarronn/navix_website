@@ -22,31 +22,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Handling
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Basic form validation
-    const inputs = this.querySelectorAll('input, select, textarea');
-    let isValid = true;
-    
-    inputs.forEach(input => {
-        if (input.required && !input.value) {
-            isValid = false;
-            input.classList.add('error');
-        } else {
-            input.classList.remove('error');
-        }
-    });
-    
-    if (isValid) {
-        // Here you would typically send the form data to your server
-        // For now, we'll just show a success message
-        alert('¡Gracias por contactarnos! Nos pondremos en contacto con usted pronto.');
-        this.reset();
-    }
-});
+// Form Handling - DISABLED to avoid conflicts with EmailJS
+// const contactForm = document.getElementById('contactForm');
+// contactForm.addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     
+//     // Basic form validation
+//     const inputs = this.querySelectorAll('input, select, textarea');
+//     let isValid = true;
+//     
+//     inputs.forEach(input => {
+//         if (input.required && !input.value) {
+//             isValid = false;
+//             input.classList.add('error');
+//         } else {
+//             input.classList.remove('error');
+//         }
+//     });
+//     
+//     if (isValid) {
+//         // Here you would typically send the form data to your server
+//         // For now, we'll just show a success message
+//         alert('¡Gracias por contactarnos! Nos pondremos en contacto con usted pronto.');
+//         // Form reset removed - handled by EmailJS
+//     }
+// });
 
 // Intersection Observer for Animations
 const observerOptions = {
@@ -105,16 +105,24 @@ window.addEventListener('scroll', animateOnScroll);
 // Add scroll event listener for header background change
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
+    if (header) {
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
     }
 });
 
 // Add animation for the logo on scroll
 const logo = document.querySelector('.logo h1');
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    logo.style.transform = `translateY(${scrollPosition * 0.1}px)`;
-});
+if (logo) {
+    console.log('Logo element found:', logo); // Debug log
+    console.log('Adding scroll listener for logo animation'); // Debug log
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        logo.style.transform = `translateY(${scrollPosition * 0.1}px)`;
+    });
+} else {
+    console.log('Logo element not found - no animation will be applied');
+}
